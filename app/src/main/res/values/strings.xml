@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Klanrock Studio</string>
+    <string name="chat_photo">Chat dengan <b>Photo</b> adalah layanan tanya jadwal seputar layanan foto</string>
 </resources>

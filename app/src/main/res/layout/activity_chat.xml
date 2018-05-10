@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_centerHorizontal="true"
     android:layout_centerVertical="true"
+    tools:context="id.ac.poljie.android.belajar.klanrockstudio.MainActivity"
     android:orientation="vertical"
     android:padding="16dp"
     android:background="#FFF">
@@ -32,13 +34,20 @@
         android:id="@+id/imageButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignStart="@+id/null"
-        android:layout_marginBottom="199dp"
+        android:layout_centerVertical="true"
+        android:layout_toStartOf="@+id/null"
         android:background="@android:color/transparent"
         android:foregroundGravity="left"
         android:src="@drawable/ic_whatsapp_logo" />
 
+    <Button
+        android:layout_width="272dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@color/colorWhite"
+        android:gravity=""
+        android:text="Whatsapp"
+        android:textSize="16dp" />
 
 </RelativeLayout>
 

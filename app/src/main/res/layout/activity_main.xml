@@ -4,29 +4,31 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="id.ac.poljie.android.belajar.klanrockstudio.MainActivity"
+    tools:context="id.ac.poljie.android.belajar.klanrockstudio.Login.MainActivity"
     android:background="@drawable/wallpaper">
 
     <Button
         android:id="@+id/button"
         android:layout_width="224dp"
         android:layout_height="38dp"
+        android:layout_alignEnd="@+id/textView2"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
         android:layout_gravity="center"
-        android:layout_marginBottom="148dp"
+        android:layout_marginBottom="207dp"
         android:background="#424242"
         android:text="LOGIN"
-        android:textColor="@android:color/background_light" />
+        android:textColor="@android:color/background_light"
+        tools:ignore="RtlCompat" />
 
     <EditText
         android:id="@+id/text_password"
         android:layout_width="290dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignStart="@+id/button"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
         android:layout_gravity="right"
-        android:layout_marginBottom="225dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginTop="237dp"
         android:backgroundTint="@android:color/background_light"
         android:hint="Password"
         android:inputType="textPassword"
@@ -34,7 +36,7 @@
         android:textColor="#ffff"
         android:textColorHint="@android:color/background_light"
         android:textSize="20sp"
-        android:layout_alignLeft="@+id/button" />
+        tools:ignore="RtlCompat" />
 
     <ImageButton
         android:id="@+id/imageButton"
@@ -53,14 +55,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_alignTop="@+id/text_username"
+        android:layout_alignParentTop="true"
         android:layout_gravity="center_vertical"
-        android:layout_marginStart="21dp"
+        android:layout_marginStart="27dp"
+        android:layout_marginTop="184dp"
         android:background="@android:color/transparent"
         app:srcCompat="@drawable/ic_mail"
-        tools:ignore="DuplicateIds"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="21dp" />
+        tools:ignore="DuplicateIds,RtlCompat" />
 
     <TextView
         android:id="@+id/textView"
@@ -81,16 +82,16 @@
         android:layout_width="290dp"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_alignStart="@+id/button"
+        android:layout_alignStart="@+id/text_password"
         android:layout_gravity="right"
-        android:layout_marginTop="224dp"
+        android:layout_marginTop="170dp"
         android:backgroundTint="@android:color/background_light"
         android:hint="Username"
         android:inputType="textEmailAddress"
         android:textColor="@android:color/background_light"
         android:textColorHint="@android:color/background_light"
         android:textSize="20sp"
-        android:layout_alignLeft="@+id/button" />
+        tools:ignore="RtlCompat" />
 
     <TextView
         android:id="@+id/textView2"

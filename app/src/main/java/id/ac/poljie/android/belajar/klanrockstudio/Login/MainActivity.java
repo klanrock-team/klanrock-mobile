@@ -1,7 +1,6 @@
-package id.ac.poljie.android.belajar.klanrockstudio;
+package id.ac.poljie.android.belajar.klanrockstudio.Login;
 
 import android.content.Intent;
-import android.support.design.widget.BaseTransientBottomBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -10,6 +9,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import id.ac.poljie.android.belajar.klanrockstudio.BottomBar.SecondActivity;
+import id.ac.poljie.android.belajar.klanrockstudio.R;
 
 public class MainActivity extends AppCompatActivity {
     private EditText Name;

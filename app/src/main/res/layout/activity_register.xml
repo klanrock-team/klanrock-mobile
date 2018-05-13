@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="id.ac.poljie.android.belajar.klanrockstudio.Login.MainActivity"
+    android:background="@drawable/wallpaper">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="16dp"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:layout_marginTop="70dp"
+            android:text="KlanrocK"
+            android:textColor="@android:color/background_light"
+            android:textSize="30dp"
+            android:textStyle="bold"
+             />
+
+        <ImageButton
+            android:id="@+id/imageButton1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignStart="@+id/imageButton"
+            android:layout_marginTop="202dp"
+            android:background="@android:color/transparent"
+            android:foregroundGravity="left"
+            android:src="@drawable/ic_account"
+            tools:ignore="RtlCompat,VectorDrawableCompat" />
+
+        <EditText
+            android:id="@+id/text_username"
+            android:layout_width="290dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:layout_gravity="right"
+            android:layout_marginEnd="23dp"
+            android:layout_marginTop="186dp"
+            android:backgroundTint="@android:color/background_light"
+            android:hint="Username"
+            android:inputType="textEmailAddress"
+            android:textColor="@android:color/background_light"
+            android:textColorHint="@android:color/background_light"
+            android:textSize="20sp"
+            tools:ignore="RtlCompat" />
+
+        <ImageButton
+            android:id="@+id/imageButton2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignStart="@+id/imageButton"
+            android:layout_marginTop="250dp"
+            android:background="@android:color/transparent"
+            android:foregroundGravity="left"
+            android:src="@drawable/ic_phone"
+            tools:ignore="RtlCompat,VectorDrawableCompat" />
+
+        <EditText
+            android:id="@+id/text_phone"
+            android:layout_width="290dp"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/text_username"
+            android:layout_below="@+id/text_username"
+            android:layout_gravity="right"
+            android:backgroundTint="@android:color/background_light"
+            android:hint="Phone"
+            android:inputType="textPassword"
+            android:password="true"
+            android:textColor="#ffff"
+            android:textColorHint="@android:color/background_light"
+            android:textSize="20sp"
+            tools:ignore="RtlCompat" />
+
+
+        <ImageButton
+            android:id="@+id/imageButton3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignStart="@+id/imageButton"
+            android:layout_gravity="center_vertical"
+            android:layout_marginBottom="244dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_key"
+            tools:ignore="RtlCompat,VectorDrawableCompat" />
+
+        <EditText
+            android:id="@+id/text_password"
+            android:layout_width="290dp"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/text_email"
+            android:layout_alignStart="@+id/text_username"
+            android:layout_gravity="right"
+            android:backgroundTint="@android:color/background_light"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:password="true"
+            android:textColor="#ffff"
+            android:textColorHint="@android:color/background_light"
+            android:textSize="20sp"
+            tools:ignore="RtlCompat" />
+
+
+        <ImageButton
+            android:id="@+id/imageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="196dp"
+            android:layout_marginStart="39dp"
+            android:background="@android:color/transparent"
+            android:foregroundGravity="left"
+            android:src="@drawable/ic_mail"
+            tools:ignore="RtlCompat,VectorDrawableCompat" />
+
+        <EditText
+            android:id="@+id/text_email"
+            android:layout_width="290dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignStart="@+id/text_username"
+            android:layout_gravity="right"
+            android:layout_marginBottom="187dp"
+            android:backgroundTint="@android:color/background_light"
+            android:hint="Email"
+            android:inputType="textPassword"
+            android:password="true"
+            android:textColor="#ffff"
+            android:textColorHint="@android:color/background_light"
+            android:textSize="20sp"
+            tools:ignore="RtlCompat" />
+
+        <Button
+            android:id="@+id/btn_register"
+            android:layout_width="288dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:layout_marginBottom="122dp"
+            android:background="#424242"
+            android:text="CREATE ACCOUNT"
+            android:textColor="#fff"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="48dp"
+            tools:layout_editor_absoluteY="390dp" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="297dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignStart="@+id/imageButton"
+            android:layout_marginBottom="80dp"
+            android:text="Sudah punya akun? Login"
+            android:textColor="@android:color/white"
+            android:layout_alignLeft="@+id/imageButton" />
+
+    </RelativeLayout>
+
+
+</android.support.constraint.ConstraintLayout>

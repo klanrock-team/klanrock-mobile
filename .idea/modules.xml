@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Klanrock.iml" filepath="$PROJECT_DIR$/Klanrock.iml" />
+      <module fileurl="file://E:\Project\Klanrock.iml" filepath="E:\Project\Klanrock.iml" />
       <module fileurl="file://F:\My Project\Klanrock\KlanrockMobile.iml" filepath="F:\My Project\Klanrock\KlanrockMobile.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Project.iml" filepath="$PROJECT_DIR$/Project.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://E:\Project\app\app.iml" filepath="E:\Project\app\app.iml" />
       <module fileurl="file://F:\My Project\Klanrock\app\app.iml" filepath="F:\My Project\Klanrock\app\app.iml" />
     </modules>
   </component>

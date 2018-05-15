@@ -21,6 +21,8 @@
             android:name=".NavDrawer.Drawer"
             android:label="@string/title_activity_drawer"
             android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".BottomBar.SecondActivity" android:theme="@style/AppTheme.NoActionBar">
+        </activity>
     </application>
 
 </manifest>

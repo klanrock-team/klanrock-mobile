@@ -9,6 +9,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import id.ac.poljie.android.belajar.klanrockstudio.BottomBar.SecondActivity;
+import id.ac.poljie.android.belajar.klanrockstudio.NavDrawer.Drawer;
 import id.ac.poljie.android.belajar.klanrockstudio.R;
 
 public class MainActivity extends AppCompatActivity {
@@ -40,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void validate(String userName, String userPassword){
         if((userName.equals("User")) && (userPassword.equals("user"))){
-            Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+            Intent intent = new Intent(MainActivity.this, Drawer.class);
             startActivity(intent);
         }else{
             counter--;

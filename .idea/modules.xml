@@ -2,8 +2,14 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+<<<<<<< HEAD
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/klanrock-mobile-dev-fendrik.iml" filepath="$PROJECT_DIR$/klanrock-mobile-dev-fendrik.iml" />
+=======
+      <module fileurl="file://F:\My Project\Mobile\toni\Projek.iml" filepath="F:\My Project\Mobile\toni\Projek.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/toni.iml" filepath="$PROJECT_DIR$/toni.iml" />
+>>>>>>> 691d2b36355a0f4f54d93491f765cc45becd91d9
     </modules>
   </component>
 </project>

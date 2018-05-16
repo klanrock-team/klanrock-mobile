@@ -12,16 +12,20 @@
         <activity
             android:name=".Login.MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+
         </activity>
         <activity
             android:name=".NavDrawer.Drawer"
             android:label="@string/title_activity_drawer"
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity android:name=".BottomBar.SecondActivity" android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+
+        <activity android:name=".flipper.viewflipper" android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
 

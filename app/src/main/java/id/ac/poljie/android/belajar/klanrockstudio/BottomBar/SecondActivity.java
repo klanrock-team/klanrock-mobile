@@ -32,7 +32,7 @@ public class SecondActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.fragment_second);
 
         //Initializing viewPager
         viewPager = (ViewPager) findViewById(R.id.viewpager);

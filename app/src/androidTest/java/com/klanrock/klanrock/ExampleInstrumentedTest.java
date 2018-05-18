@@ -1,4 +1,4 @@
-package id.ac.poljie.android.belajar.klanrockstudio;
+package com.klanrock.klanrock;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("id.ac.poljie.android.belajar.klanrockstudio", appContext.getPackageName());
+        assertEquals("com.klanrock.klanrock", appContext.getPackageName());
     }
 }

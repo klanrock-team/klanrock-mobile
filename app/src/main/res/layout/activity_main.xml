@@ -1,108 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="id.ac.poljie.android.belajar.klanrockstudio.Login.MainActivity"
-    android:background="@drawable/wallpaper">
+    android:fitsSystemWindows="true"
+    tools:openDrawer="start">
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="224dp"
-        android:layout_height="38dp"
-        android:layout_alignEnd="@+id/textView2"
-        android:layout_alignParentBottom="true"
-        android:layout_gravity="center"
-        android:layout_marginBottom="207dp"
-        android:background="#424242"
-        android:text="LOGIN"
-        android:textColor="@android:color/background_light"
-        tools:ignore="RtlCompat" />
+    <include
+        layout="@layout/app_bar_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
-    <EditText
-        android:id="@+id/text_password"
-        android:layout_width="290dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentTop="true"
-        android:layout_gravity="right"
-        android:layout_marginEnd="15dp"
-        android:layout_marginTop="237dp"
-        android:backgroundTint="@android:color/background_light"
-        android:hint="Password"
-        android:inputType="textPassword"
-        android:password="true"
-        android:textColor="#ffff"
-        android:textColorHint="@android:color/background_light"
-        android:textSize="20sp"
-        tools:ignore="RtlCompat" />
-
-    <ImageButton
-        android:id="@+id/imageButton"
+    <android.support.design.widget.NavigationView
+        android:id="@+id/nav_view"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/imageButton"
-        android:layout_alignTop="@+id/text_password"
-        android:background="@android:color/transparent"
-        android:foregroundGravity="left"
-        app:srcCompat="@drawable/ic_key"
-        android:layout_alignLeft="@+id/imageButton"
-        tools:ignore="NotSibling" />
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"
+        app:itemIconTint="@drawable/state_list_samping"
+        app:itemTextColor="@drawable/state_list_samping"
+        app:headerLayout="@layout/nav_header_main"
+        app:menu="@menu/menu_samping" />
 
-    <ImageButton
-        android:id="@+id/imageButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_gravity="center_vertical"
-        android:layout_marginStart="27dp"
-        android:layout_marginTop="184dp"
-        android:background="@android:color/transparent"
-        app:srcCompat="@drawable/ic_mail"
-        tools:ignore="DuplicateIds,RtlCompat" />
+</android.support.v4.widget.DrawerLayout>
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_gravity="center"
-        android:layout_marginTop="70dp"
-        android:text="KlanRock"
-
-        android:textColor="@android:color/background_light"
-        android:textSize="30dp"
-        android:textStyle="bold" />
-
-    <EditText
-        android:id="@+id/text_username"
-        android:layout_width="290dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignStart="@+id/text_password"
-        android:layout_gravity="right"
-        android:layout_marginTop="170dp"
-        android:backgroundTint="@android:color/background_light"
-        android:hint="Username"
-        android:inputType="textEmailAddress"
-        android:textColor="@android:color/background_light"
-        android:textColorHint="@android:color/background_light"
-        android:textSize="20sp"
-        tools:ignore="RtlCompat" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="297dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignStart="@+id/imageButton"
-        android:layout_marginBottom="80dp"
-        android:text="Belum punya akun? Klik disini"
-        android:textColor="@android:color/white"
-        android:layout_alignLeft="@+id/imageButton" />
-
-
-</RelativeLayout>

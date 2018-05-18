@@ -1,4 +1,4 @@
-package id.ac.poljie.android.belajar.klanrockstudio;
+package com.klanrock.klanrock;
 
 import org.junit.Test;
 

@@ -1,5 +1,12 @@
 package com.klanrock.klanrock;
 
+<<<<<<< HEAD
+=======
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.net.ConnectivityManager;
+>>>>>>> 5c11de07931b40cf7449c995808fdce2b42a2973
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -15,11 +22,22 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.widget.ImageView;
+<<<<<<< HEAD
 
+=======
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.daimajia.slider.library.Animations.DescriptionAnimation;
+import com.daimajia.slider.library.SliderLayout;
+import com.daimajia.slider.library.SliderTypes.BaseSliderView;
+import com.daimajia.slider.library.SliderTypes.TextSliderView;
+>>>>>>> 5c11de07931b40cf7449c995808fdce2b42a2973
 import com.synnapps.carouselview.CarouselView;
 import com.synnapps.carouselview.ImageListener;
 
 import java.util.ArrayList;
+<<<<<<< HEAD
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -28,19 +46,44 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private ViewPager viewPager;
     private BottomNavigationView BottomNavigation;
 
+=======
+import java.util.HashMap;
+import java.util.List;
+
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+    //viewPager
+    private ViewPager viewPager;
+    private BottomNavigationView BottomNavigation;
+>>>>>>> 5c11de07931b40cf7449c995808fdce2b42a2973
     //Fragments
     HomeFragment HomeFragment;
     MyorderFragment MyOrderFragment;
     JadwalFragment JadwalFragment;
     MenuItem prevMenuItem;
+<<<<<<< HEAD
 
+=======
+    String id,nama;
+    SharedPreferences sharedPreferences;
+    TextView nama_pelanggan;
+>>>>>>> 5c11de07931b40cf7449c995808fdce2b42a2973
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+<<<<<<< HEAD
 
+=======
+        nama_pelanggan = (TextView) findViewById(R.id.nama_pelanggan);
+        sharedPreferences = getSharedPreferences(LoginActivity.my_session,Context.MODE_PRIVATE);
+        //Get data login
+        id = getIntent().getStringExtra("id");
+        nama = getIntent().getStringExtra(LoginActivity.TAG_NAMA);
+//        nama_pelanggan.setText(nama.toString());
+        Toast.makeText(MainActivity.this,nama,Toast.LENGTH_LONG).show();
+>>>>>>> 5c11de07931b40cf7449c995808fdce2b42a2973
 
         //Initializing viewPager
         viewPager = (ViewPager) findViewById(R.id.viewpager);
@@ -143,7 +186,22 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         if (id == R.id.nav_account) {
             // Handle the camera action
+<<<<<<< HEAD
         } else if (id == R.id.nav_gallery) {
+=======
+        } else if (id == R.id.nav_log_out) {
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putBoolean(LoginActivity.session_status,false);
+            editor.putString(LoginActivity.TAG_USERNAME,null);
+            editor.putString(LoginActivity.TAG_NAMA,null);
+            editor.putString(LoginActivity.TAG_ID_LOGIN,null);
+            editor.putString(LoginActivity.TAG_ID_PELANGGAN,null);
+            editor.commit();
+            //jika berhasil login,pindah ke home
+            Intent intent = new Intent(MainActivity.this,LoginActivity.class);
+            finish();
+            startActivity(intent);
+>>>>>>> 5c11de07931b40cf7449c995808fdce2b42a2973
 
         }
 //        else if (id == R.id.nav_slideshow) {
@@ -197,4 +255,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
 
     }
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 5c11de07931b40cf7449c995808fdce2b42a2973
 }

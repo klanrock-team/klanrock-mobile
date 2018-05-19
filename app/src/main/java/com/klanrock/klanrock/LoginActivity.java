@@ -1,7 +1,14 @@
 package com.klanrock.klanrock;
 
 import android.app.ProgressDialog;
+<<<<<<< HEAD
 import android.content.Intent;
+=======
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.net.ConnectivityManager;
+>>>>>>> 5c11de07931b40cf7449c995808fdce2b42a2973
 import android.os.Handler;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -21,6 +28,11 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
+<<<<<<< HEAD
+=======
+import org.json.JSONObject;
+
+>>>>>>> 5c11de07931b40cf7449c995808fdce2b42a2973
 import java.util.HashMap;
 import java.util.Map;
 
@@ -30,12 +42,58 @@ public class LoginActivity extends AppCompatActivity {
     private static String URL_LOGIN = "http://192.168.43.7/klanrock/pelanggan/login";
     private Snackbar snackbar;
     private ProgressDialog pd;
+<<<<<<< HEAD
+=======
+    private ConnectivityManager cekConnection;
+
+    //key json response
+    final static String TAG = LoginActivity.class.getSimpleName();
+    final static String TAG_MESSAGE = "message";
+    final static String TAG_ID = "id";
+    final static String TAG_USERNAME = "username";
+    final static String TAG_SUCCESS = "success";
+    final static String TAG_NAMA = "nama";
+    final static String TAG_ID_LOGIN = "id_login";
+    final static String TAG_ID_PELANGGAN = "id_pelanggan";
+
+    final static String session_status = "session_status";
+    final static String my_session = "my_session";
+
+    SharedPreferences simpan_login;
+    private boolean session=false;
+>>>>>>> 5c11de07931b40cf7449c995808fdce2b42a2973
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         Username = (EditText)findViewById(R.id.username);
         Password = (EditText)findViewById(R.id.password);
+<<<<<<< HEAD
+=======
+        cekConnection = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        if (cekConnection.getActiveNetworkInfo()!=null && cekConnection.getActiveNetworkInfo().isAvailable() && cekConnection.getActiveNetworkInfo().isConnected()){
+
+        }else{
+            Toast.makeText(LoginActivity.this,"No Internet Connection!!",Toast.LENGTH_SHORT).show();
+        }
+        //cek session
+        simpan_login = getSharedPreferences(my_session,Context.MODE_PRIVATE);
+        session = simpan_login.getBoolean(session_status,false);
+        String username =simpan_login.getString(TAG_USERNAME,null);
+        String nama = simpan_login.getString(TAG_NAMA,null);
+        String id_login = simpan_login.getString(TAG_ID_LOGIN,null);
+        String id_pelanggan = simpan_login.getString(TAG_ID_PELANGGAN,null);
+        if (session){
+            Intent intent = new Intent(LoginActivity.this,MainActivity.class);
+            intent.putExtra(TAG_USERNAME,username);
+            intent.putExtra(TAG_NAMA,nama);
+            intent.putExtra(TAG_ID_LOGIN,id_login);
+            intent.putExtra(TAG_ID_PELANGGAN,id_pelanggan);
+            finish();
+            startActivity(intent);
+        }
+
+>>>>>>> 5c11de07931b40cf7449c995808fdce2b42a2973
     }
 
     public void openRegister(View view) {
@@ -47,18 +105,59 @@ public class LoginActivity extends AppCompatActivity {
         pd.setMessage("Verifikasi Login...");
         pd.show();
         RequestQueue queue = Volley.newRequestQueue(this);
+<<<<<<< HEAD
         String response = null;
         final String finalResponse = response;
+=======
+//        String response = null;
+//        final String finalResponse = response;
+>>>>>>> 5c11de07931b40cf7449c995808fdce2b42a2973
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST, URL_LOGIN,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
                         pd.hide();
+<<<<<<< HEAD
                         showSnackbar(response);
                         if(response.equals("Berhasil Login")){
                             handler.postDelayed(runAfterDelay,1000);
                         }
+=======
+                        try {
+                            JSONObject data = new JSONObject(response);
+                            int success = data.getInt(TAG_SUCCESS);
+                            String message = data.getString(TAG_MESSAGE);
+                            showSnackbar(message);
+                            if (success==1){
+                                String username = data.getString(TAG_USERNAME);
+                                String nama = data.getString(TAG_NAMA);
+                                String id_login = data.getString(TAG_ID_LOGIN);
+                                String id_pelanggan = data.getString(TAG_ID_PELANGGAN);
+                                //save session login
+                                SharedPreferences.Editor editor = simpan_login.edit();
+                                editor.putBoolean(session_status,true);
+                                editor.putString(TAG_USERNAME,username);
+                                editor.putString(TAG_NAMA,nama);
+                                editor.putString(TAG_ID_LOGIN,id_login);
+                                editor.putString(TAG_ID_PELANGGAN,id_pelanggan);
+                                editor.commit();
+                                //jika berhasil login,pindah ke home
+                                Intent intent = new Intent(LoginActivity.this,MainActivity.class);
+                                intent.putExtra(TAG_USERNAME,username);
+                                intent.putExtra(TAG_NAMA,nama);
+                                intent.putExtra(TAG_ID_LOGIN,id_login);
+                                intent.putExtra(TAG_ID_PELANGGAN,id_pelanggan);
+                                finish();
+                                startActivity(intent);
+                            }
+                        }catch (Exception e){
+                            e.printStackTrace();
+                        }
+//                        if(response.equals("Berhasil Login")){
+//                            handler.postDelayed(runAfterDelay,1000);
+//                        }
+>>>>>>> 5c11de07931b40cf7449c995808fdce2b42a2973
                     }
                 },
                 new Response.ErrorListener()
@@ -66,8 +165,12 @@ public class LoginActivity extends AppCompatActivity {
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         // error
+<<<<<<< HEAD
                         Log.d("ErrorResponse", finalResponse);
 
+=======
+                        Log.d(TAG,"Login Error : "+error.getMessage());
+>>>>>>> 5c11de07931b40cf7449c995808fdce2b42a2973
 
                     }
                 }
@@ -92,6 +195,7 @@ public class LoginActivity extends AppCompatActivity {
                 .setActionTextColor(getResources().getColor(R.color.colorPrimary))
                 .show();
     }
+<<<<<<< HEAD
 
     private Runnable runAfterDelay = new Runnable() {
         @Override
@@ -117,4 +221,34 @@ public class LoginActivity extends AppCompatActivity {
 
         }
     }
+=======
+//
+//    private Runnable runAfterDelay = new Runnable() {
+//        @Override
+//        public void run(){
+//            startActivity(new Intent(getApplicationContext(), MainActivity.class));
+//            finish();
+//        }
+//    };
+
+    public void login(View view) {
+        if (cekConnection.getActiveNetworkInfo()!=null && cekConnection.getActiveNetworkInfo().isAvailable() && cekConnection.getActiveNetworkInfo().isConnected()){
+            if (Username.getText().toString().length()==0){
+                Username.setError("Required Field!");
+            }
+            else if (Password.getText().toString().length()==0){
+                Password.setError("Required Field!");
+            }else{
+                try{
+                    cek_login();
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
+
+            }
+        }else{
+            Toast.makeText(LoginActivity.this,"No Internet Connection!!",Toast.LENGTH_SHORT).show();
+        }
+            }
+>>>>>>> 5c11de07931b40cf7449c995808fdce2b42a2973
 }

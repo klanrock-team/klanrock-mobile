@@ -1,1 +1,7 @@
 /build
+<<<<<<< HEAD
+=======
+app.ini
+build.gradle
+proguard-rules.pro
+>>>>>>> 5c11de07931b40cf7449c995808fdce2b42a2973

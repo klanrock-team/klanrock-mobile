@@ -29,6 +29,7 @@ dependencies {
     implementation 'com.android.volley:volley:1.1.0'
     compile 'com.synnapps:carouselview:0.1.4'
     compile 'com.github.bumptech.glide:glide:3.7.0'
+<<<<<<< HEAD
 
     // RecyclerView
     compile 'com.android.support:recyclerview-v7:27.1.1'
@@ -38,4 +39,10 @@ dependencies {
 
     // Glide
     compile 'com.github.bumptech.glide:glide:3.7.0'
+=======
+    compile 'com.squareup.picasso:picasso:2.3.2'
+    compile 'com.nineoldandroids:library:2.4.0'
+    compile 'com.daimajia.slider:library:1.1.5@aar'
+
+>>>>>>> 5c11de07931b40cf7449c995808fdce2b42a2973
 }

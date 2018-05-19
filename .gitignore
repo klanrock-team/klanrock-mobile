@@ -7,3 +7,11 @@
 /build
 /captures
 .externalNativeBuild
+<<<<<<< HEAD
+=======
+.idea
+.build.gradle
+.gradle.properties
+gradle/wrapper/gradle-wrapper.properties
+gradle/wrapper/gradle-wrapper.jar
+>>>>>>> 5c11de07931b40cf7449c995808fdce2b42a2973

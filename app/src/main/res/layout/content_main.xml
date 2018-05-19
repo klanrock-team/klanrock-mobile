@@ -7,15 +7,22 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.klanrock.klanrock.MainActivity"
     tools:showIn="@layout/app_bar_main"
+<<<<<<< HEAD
     android:background="@drawable/background">
+=======
+    android:background="@color/colorLynch">
+>>>>>>> 5c11de07931b40cf7449c995808fdce2b42a2973
 
     <android.support.v4.view.ViewPager
         android:id="@+id/viewpager"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_above="@+id/navigation_bottom"
+<<<<<<< HEAD
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
+=======
+>>>>>>> 5c11de07931b40cf7449c995808fdce2b42a2973
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"

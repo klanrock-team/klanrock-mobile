@@ -3,6 +3,10 @@
     package="com.klanrock.klanrock">
 
     <uses-permission android:name="android.permission.INTERNET" />
+<<<<<<< HEAD
+=======
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+>>>>>>> 5c11de07931b40cf7449c995808fdce2b42a2973
 
     <application
         android:allowBackup="true"
@@ -14,7 +18,14 @@
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
+<<<<<<< HEAD
             android:theme="@style/AppTheme.NoActionBar"></activity>
+=======
+            android:theme="@style/AppTheme.NoActionBar">
+
+        </activity>
+
+>>>>>>> 5c11de07931b40cf7449c995808fdce2b42a2973
         <activity
             android:name=".LoginActivity"
             android:theme="@style/AppTheme.NoActionBar">
@@ -24,10 +35,19 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+<<<<<<< HEAD
         <activity
             android:name=".RegisterActivity"
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity android:name=".RecycleActivity"></activity>
+=======
+
+        <activity
+            android:name=".RegisterActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+
+        </activity>
+>>>>>>> 5c11de07931b40cf7449c995808fdce2b42a2973
     </application>
 
 </manifest>

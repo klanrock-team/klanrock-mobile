@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".ContactusActivity"
+    android:background="#FFF">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="16dp"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:text="KlanrocK"
+            android:textColor="@android:color/black"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            app:fontFamily="@font/oswald_bold" />
+
+        <EditText
+            android:id="@+id/editText5"
+            android:layout_width="330dp"
+            android:layout_height="50dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignTop="@+id/imageButton"
+            android:ems="10"
+            android:inputType="textPostalAddress"
+            android:text="@string/alamat" />
+
+        <ImageButton
+            android:id="@+id/imageButton"
+            android:layout_width="55dp"
+            android:layout_height="50dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignStart="@+id/imageButton"
+            android:layout_marginTop="112dp"
+            android:background="@android:color/transparent"
+            android:foregroundGravity="left"
+            android:src="@drawable/ic_action_name_home" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profile_image"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginEnd="-97dp"
+            android:layout_marginTop="218dp"
+            android:layout_toStartOf="@+id/textView2"
+            android:src="@drawable/slide3"
+            app:civ_border_color="#FFF"
+            app:civ_border_width="2dp" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_gravity="center"
+            android:layout_marginStart="104dp"
+            android:layout_marginTop="250dp"
+            android:text="Linda Heartfilia"
+            android:textColor="@android:color/black"
+            android:textSize="20dp">
+
+        </TextView>
+
+        <EditText
+            android:id="@+id/editText2"
+            android:layout_width="330dp"
+            android:layout_height="80dp"
+            android:layout_above="@+id/editText"
+            android:layout_alignParentEnd="true"
+            android:ems="10"
+            android:inputType="phone"
+            android:text="@string/telfon" />
+
+        <ImageButton
+            android:id="@+id/imageButton1"
+            android:layout_width="55dp"
+            android:layout_height="81dp"
+            android:layout_alignBottom="@+id/editText2"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="0dp"
+            android:background="@android:color/transparent"
+            android:foregroundGravity="left"
+            android:src="@drawable/ic_action_name_phone" />
+
+        <EditText
+            android:id="@+id/editText"
+            android:layout_width="330dp"
+            android:layout_height="80dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginBottom="61dp"
+            android:ems="10"
+            android:inputType="textEmailAddress"
+            android:text="@string/email" />
+
+        <ImageButton
+            android:id="@+id/imageButton2"
+            android:layout_width="55dp"
+            android:layout_height="78dp"
+            android:layout_alignTop="@+id/editText"
+            android:background="@android:color/transparent"
+            android:foregroundGravity="left"
+            android:src="@drawable/ic_action_name_mail" />
+
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>

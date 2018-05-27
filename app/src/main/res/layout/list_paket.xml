@@ -28,23 +28,32 @@
                 android:id="@+id/title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_below="@+id/thumbnail"
+                android:layout_below="@id/thumbnail"
                 android:paddingLeft="@dimen/album_title_padding"
                 android:paddingRight="@dimen/album_title_padding"
                 android:paddingTop="@dimen/album_title_padding"
-                android:textColor="#4c4c4c"
+                android:textColor="@color/paket_title"
                 android:textSize="@dimen/album_title" />
 
             <TextView
-                android:id="@+id/counts"
+                android:id="@+id/count"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/title"
-                android:paddingBottom="@dimen/price_count_padding_bottom"
+                android:paddingBottom="@dimen/songs_count_padding_bottom"
                 android:paddingLeft="@dimen/album_title_padding"
                 android:paddingRight="@dimen/album_title_padding"
-                android:textSize="@dimen/price_count" />
+                android:textSize="@dimen/songs_count" />
+            <Button
+                android:id="@+id/btn_pesan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pesan"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="20dp"
+                android:layout_below="@+id/count"
+                android:layout_alignParentRight="true"/>
 
 
         </RelativeLayout>

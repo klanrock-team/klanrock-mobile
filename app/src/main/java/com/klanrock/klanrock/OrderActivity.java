@@ -2,10 +2,10 @@ package com.klanrock.klanrock;
 
 import android.content.res.Resources;
 import android.graphics.Rect;
+import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -19,25 +19,27 @@ import com.bumptech.glide.Glide;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RecycleActivity extends AppCompatActivity {
+public class OrderActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
-    private AlbumsAdapter adapter;
-    private List<Album> albumList;
+    private PaketAdapter adapter;
+    private List<Paket> paketList;
+    private Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_recycle);
-        Toolbar toolbar = findViewById(R.id.toolbar);
+        setContentView(R.layout.activity_order);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setDefaultDisplayHomeAsUpEnabled(true);
 
         initCollapsingToolbar();
 
-        recyclerView = findViewById(R.id.recycler_view);
+        recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
 
-        albumList = new ArrayList<>();
-        adapter = new AlbumsAdapter(this, albumList);
+        paketList = new ArrayList<>();
+        adapter = new PaketAdapter(this, paketList);
 
         RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(this, 2);
         recyclerView.setLayoutManager(mLayoutManager);
@@ -48,7 +50,7 @@ public class RecycleActivity extends AppCompatActivity {
         prepareAlbums();
 
         try {
-            Glide.with(this).load(R.drawable.background).into((ImageView) findViewById(R.id.backdrop));
+            Glide.with(this).load(R.drawable.wallpaper).into((ImageView) findViewById(R.id.backdrop));
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -60,10 +62,11 @@ public class RecycleActivity extends AppCompatActivity {
      */
     private void initCollapsingToolbar() {
         final CollapsingToolbarLayout collapsingToolbar =
-                findViewById(R.id.collapsing_toolbar);
+                (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar);
         collapsingToolbar.setTitle(" ");
-        AppBarLayout appBarLayout = findViewById(R.id.appbar);
+        AppBarLayout appBarLayout = (AppBarLayout) findViewById(R.id.appbar);
         appBarLayout.setExpanded(true);
+        final int a = toolbar.getDrawingCacheBackgroundColor();
 
         // hiding & showing the title when toolbar expanded & collapsed
         appBarLayout.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() {
@@ -76,10 +79,12 @@ public class RecycleActivity extends AppCompatActivity {
                     scrollRange = appBarLayout.getTotalScrollRange();
                 }
                 if (scrollRange + verticalOffset == 0) {
-                    collapsingToolbar.setTitle(getString(R.string.app_recycle));
+                    collapsingToolbar.setTitle(getString(R.string.app_name));
+                    toolbar.setBackgroundColor(getResources().getColor(R.color.colorEbony));
                     isShow = true;
                 } else if (isShow) {
                     collapsingToolbar.setTitle(" ");
+                    toolbar.setBackgroundColor(a);
                     isShow = false;
                 }
             }
@@ -91,36 +96,44 @@ public class RecycleActivity extends AppCompatActivity {
      */
     private void prepareAlbums() {
         int[] covers = new int[]{
-                R.drawable.album1,
-                R.drawable.album2,
-                R.drawable.album3,
-                R.drawable.album4,
-                R.drawable.album5,
-                R.drawable.album6,
-                R.drawable.album7
+                R.drawable.wisuda,
+                R.drawable.couple,
+                R.drawable.maturity,
+                R.drawable.group,
+                R.drawable.preweed,
+                R.drawable.wisuda,
+                R.drawable.weeding
         };
 
-        Album a = new Album("Personal",  500000, covers[0]);
-        albumList.add(a);
+        Paket a = new Paket("Personal",  500000, covers[0],"Pesan");
+        paketList.add(a);
 
-        a = new Album("Couple",  200000, covers[1]);
-        albumList.add(a);
+        a = new Paket("Couple",  200000, covers[1],"Pesan");
+        paketList.add(a);
 
-        a = new Album("Maturity",  150000, covers[2]);
-        albumList.add(a);
+        a = new Paket("Maturity",  150000, covers[2],"Pesan");
+        paketList.add(a);
 
-        a = new Album("Group",  155000, covers[3]);
-        albumList.add(a);
+        a = new Paket("Group",  155000, covers[3],"Pesan");
+        paketList.add(a);
 
-        a = new Album("PreWeed",160000, covers[4]);
-        albumList.add(a);
+        a = new Paket("PreWeed",160000, covers[4],"Pesan");
+        paketList.add(a);
 
-        a = new Album("Wisuda",145000, covers[5]);
-        albumList.add(a);
+        a = new Paket("Wisuda",145000, covers[5],"Pesan");
+        paketList.add(a);
 
-        a = new Album("Weeding",135000, covers[6]);
-        albumList.add(a);
+        a = new Paket("Weeding",135000, covers[6],"Pesan");
+        paketList.add(a);
 
+//        a = new Paket("Saya", 120000, covers[7]);
+//        paketList.add(a);
+//
+//        a = new Paket("Sayaka", 170000, covers[8]);
+//        paketList.add(a);
+//
+//        a = new Paket("Hirasa", 190000, covers[9]);
+//        paketList.add(a);
 
         adapter.notifyDataSetChanged();
     }

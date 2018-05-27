@@ -1,12 +1,10 @@
 package com.klanrock.klanrock;
 
-<<<<<<< HEAD
-=======
+import android.accounts.Account;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
->>>>>>> 5c11de07931b40cf7449c995808fdce2b42a2973
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -21,10 +19,8 @@ import android.view.MenuItem;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
+import android.view.View;
 import android.widget.ImageView;
-<<<<<<< HEAD
-
-=======
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -32,21 +28,8 @@ import com.daimajia.slider.library.Animations.DescriptionAnimation;
 import com.daimajia.slider.library.SliderLayout;
 import com.daimajia.slider.library.SliderTypes.BaseSliderView;
 import com.daimajia.slider.library.SliderTypes.TextSliderView;
->>>>>>> 5c11de07931b40cf7449c995808fdce2b42a2973
-import com.synnapps.carouselview.CarouselView;
-import com.synnapps.carouselview.ImageListener;
 
 import java.util.ArrayList;
-<<<<<<< HEAD
-import java.util.List;
-
-public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
-
-    //viewPager
-    private ViewPager viewPager;
-    private BottomNavigationView BottomNavigation;
-
-=======
 import java.util.HashMap;
 import java.util.List;
 
@@ -54,36 +37,25 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     //viewPager
     private ViewPager viewPager;
     private BottomNavigationView BottomNavigation;
->>>>>>> 5c11de07931b40cf7449c995808fdce2b42a2973
     //Fragments
     HomeFragment HomeFragment;
     MyorderFragment MyOrderFragment;
     JadwalFragment JadwalFragment;
     MenuItem prevMenuItem;
-<<<<<<< HEAD
-
-=======
     String id,nama;
     SharedPreferences sharedPreferences;
     TextView nama_pelanggan;
->>>>>>> 5c11de07931b40cf7449c995808fdce2b42a2973
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-<<<<<<< HEAD
 
-=======
-        nama_pelanggan = (TextView) findViewById(R.id.nama_pelanggan);
         sharedPreferences = getSharedPreferences(LoginActivity.my_session,Context.MODE_PRIVATE);
         //Get data login
         id = getIntent().getStringExtra("id");
         nama = getIntent().getStringExtra(LoginActivity.TAG_NAMA);
-//        nama_pelanggan.setText(nama.toString());
-        Toast.makeText(MainActivity.this,nama,Toast.LENGTH_LONG).show();
->>>>>>> 5c11de07931b40cf7449c995808fdce2b42a2973
 
         //Initializing viewPager
         viewPager = (ViewPager) findViewById(R.id.viewpager);
@@ -96,6 +68,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        View nav_view = navigationView.getHeaderView(0);
+
+        nama_pelanggan = (TextView) nav_view.findViewById(R.id.name);
+        nama_pelanggan.setText(nama);
+//        Toast.makeText(MainActivity.this,nama,Toast.LENGTH_LONG).show();
 
         BottomNavigation = (BottomNavigationView) findViewById(R.id.navigation_bottom);
         BottomNavigation.setOnNavigationItemSelectedListener(
@@ -163,20 +140,20 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 //        return true;
 //    }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
+//    @Override
+//    public boolean onOptionsItemSelected(MenuItem item) {
+//        // Handle action bar item clicks here. The action bar will
+//        // automatically handle clicks on the Home/Up button, so long
+//        // as you specify a parent activity in AndroidManifest.xml.
+//        int id = item.getItemId();
+//
+//        //noinspection SimplifiableIfStatement
+//        if (id == R.id.action_settings) {
+//            return true;
+//        }
+//
+//        return super.onOptionsItemSelected(item);
+//    }
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
@@ -186,9 +163,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         if (id == R.id.nav_account) {
             // Handle the camera action
-<<<<<<< HEAD
-        } else if (id == R.id.nav_gallery) {
-=======
         } else if (id == R.id.nav_log_out) {
             SharedPreferences.Editor editor = sharedPreferences.edit();
             editor.putBoolean(LoginActivity.session_status,false);
@@ -197,11 +171,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             editor.putString(LoginActivity.TAG_ID_LOGIN,null);
             editor.putString(LoginActivity.TAG_ID_PELANGGAN,null);
             editor.commit();
-            //jika berhasil login,pindah ke home
             Intent intent = new Intent(MainActivity.this,LoginActivity.class);
             finish();
             startActivity(intent);
->>>>>>> 5c11de07931b40cf7449c995808fdce2b42a2973
 
         }
 //        else if (id == R.id.nav_slideshow) {
@@ -233,6 +205,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         viewPager.setAdapter(adapter);
     }
 
+    public void openPaket(View view) {
+        Intent intent = new Intent(MainActivity.this,OrderActivity.class);
+        startActivity(intent);
+    }
+
     private class ViewPagerAdapter extends FragmentStatePagerAdapter {
         private final List<Fragment> mFragmentList = new ArrayList<>();
 
@@ -255,9 +232,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
 
     }
-<<<<<<< HEAD
-=======
 
 
->>>>>>> 5c11de07931b40cf7449c995808fdce2b42a2973
 }

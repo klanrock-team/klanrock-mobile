@@ -1,29 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".HomeFragment">
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+tools:context=".HomeFragment"
+    android:layout_marginTop="20dp">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-<<<<<<< HEAD
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="Home"
-        android:textColor="@color/colorPrimary"/>
-=======
-        android:id="@+id/des"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text=""
-        android:textColor="@color/colorAccent"/>
-    <com.daimajia.slider.library.SliderLayout
-        android:id="@+id/slider"
+<!--&lt;!&ndash; TODO: Update blank fragment layout &ndash;&gt;-->
+<!--<TextView-->
+<!--android:id="@+id/des"-->
+<!--android:layout_width="wrap_content"-->
+<!--android:layout_height="wrap_content"-->
+<!--android:layout_gravity="center"-->
+<!--android:text=""-->
+<!--android:textColor="@color/colorAccent"/>-->
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
->>>>>>> 5c11de07931b40cf7449c995808fdce2b42a2973
+        android:layout_height="match_parent">
 
+        <com.daimajia.slider.library.SliderLayout
+            android:id="@+id/slider"
+            android:layout_width="match_parent"
+            android:layout_height="490dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true" />
+
+        <ImageButton
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="85dp"
+            android:background="@drawable/lingkaran"
+            android:clickable="true"
+            android:onClick="openPaket"
+            android:src="@mipmap/ic_launcher_shopping"
+            />
+
+    </RelativeLayout>
 </FrameLayout>

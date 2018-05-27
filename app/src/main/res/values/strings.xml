@@ -1,19 +1,8 @@
 <resources>
-    <string name="app_name">KlanrocK</string>
-<<<<<<< HEAD
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="action_settings">Settings</string>
-
-    <string name="app_recycle">Paket Foto</string>
-    <string name="backdrop_title">KLAN ROCK</string>
-    <string name="backdrop_subtitle">Tersedia 7 paket albums</string>
-=======
+    <string name="app_name">KlanrocK Studio</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
-
->>>>>>> 5c11de07931b40cf7449c995808fdce2b42a2973
 </resources>

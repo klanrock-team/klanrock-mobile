@@ -1,14 +1,10 @@
 package com.klanrock.klanrock;
 
 import android.app.ProgressDialog;
-<<<<<<< HEAD
-import android.content.Intent;
-=======
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
->>>>>>> 5c11de07931b40cf7449c995808fdce2b42a2973
 import android.os.Handler;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -28,22 +24,17 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
-<<<<<<< HEAD
-=======
 import org.json.JSONObject;
 
->>>>>>> 5c11de07931b40cf7449c995808fdce2b42a2973
 import java.util.HashMap;
 import java.util.Map;
 
 public class LoginActivity extends AppCompatActivity {
     private EditText Username,Password;
     private Handler handler = new Handler();
-    private static String URL_LOGIN = "http://192.168.43.7/klanrock/pelanggan/login";
+    private static String URL_LOGIN = "http://192.168.1.2/klanrock/pelanggan/login";
     private Snackbar snackbar;
     private ProgressDialog pd;
-<<<<<<< HEAD
-=======
     private ConnectivityManager cekConnection;
 
     //key json response
@@ -61,15 +52,12 @@ public class LoginActivity extends AppCompatActivity {
 
     SharedPreferences simpan_login;
     private boolean session=false;
->>>>>>> 5c11de07931b40cf7449c995808fdce2b42a2973
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         Username = (EditText)findViewById(R.id.username);
         Password = (EditText)findViewById(R.id.password);
-<<<<<<< HEAD
-=======
         cekConnection = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         if (cekConnection.getActiveNetworkInfo()!=null && cekConnection.getActiveNetworkInfo().isAvailable() && cekConnection.getActiveNetworkInfo().isConnected()){
 
@@ -93,7 +81,6 @@ public class LoginActivity extends AppCompatActivity {
             startActivity(intent);
         }
 
->>>>>>> 5c11de07931b40cf7449c995808fdce2b42a2973
     }
 
     public void openRegister(View view) {
@@ -105,25 +92,14 @@ public class LoginActivity extends AppCompatActivity {
         pd.setMessage("Verifikasi Login...");
         pd.show();
         RequestQueue queue = Volley.newRequestQueue(this);
-<<<<<<< HEAD
-        String response = null;
-        final String finalResponse = response;
-=======
 //        String response = null;
 //        final String finalResponse = response;
->>>>>>> 5c11de07931b40cf7449c995808fdce2b42a2973
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST, URL_LOGIN,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
                         pd.hide();
-<<<<<<< HEAD
-                        showSnackbar(response);
-                        if(response.equals("Berhasil Login")){
-                            handler.postDelayed(runAfterDelay,1000);
-                        }
-=======
                         try {
                             JSONObject data = new JSONObject(response);
                             int success = data.getInt(TAG_SUCCESS);
@@ -157,7 +133,6 @@ public class LoginActivity extends AppCompatActivity {
 //                        if(response.equals("Berhasil Login")){
 //                            handler.postDelayed(runAfterDelay,1000);
 //                        }
->>>>>>> 5c11de07931b40cf7449c995808fdce2b42a2973
                     }
                 },
                 new Response.ErrorListener()
@@ -165,12 +140,7 @@ public class LoginActivity extends AppCompatActivity {
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         // error
-<<<<<<< HEAD
-                        Log.d("ErrorResponse", finalResponse);
-
-=======
                         Log.d(TAG,"Login Error : "+error.getMessage());
->>>>>>> 5c11de07931b40cf7449c995808fdce2b42a2973
 
                     }
                 }
@@ -195,33 +165,6 @@ public class LoginActivity extends AppCompatActivity {
                 .setActionTextColor(getResources().getColor(R.color.colorPrimary))
                 .show();
     }
-<<<<<<< HEAD
-
-    private Runnable runAfterDelay = new Runnable() {
-        @Override
-        public void run() {
-            startActivity(new Intent(getApplicationContext(), MainActivity.class));
-            finish();
-        }
-    };
-
-    public void login(View view) {
-
-        if (Username.getText().toString().length()==0){
-            Username.setError("Required Field!");
-        }
-        else if (Password.getText().toString().length()==0){
-            Password.setError("Required Field!");
-        }else{
-            try{
-                cek_login();
-            }catch (Exception e){
-                e.printStackTrace();
-            }
-
-        }
-    }
-=======
 //
 //    private Runnable runAfterDelay = new Runnable() {
 //        @Override
@@ -250,5 +193,4 @@ public class LoginActivity extends AppCompatActivity {
             Toast.makeText(LoginActivity.this,"No Internet Connection!!",Toast.LENGTH_SHORT).show();
         }
             }
->>>>>>> 5c11de07931b40cf7449c995808fdce2b42a2973
 }

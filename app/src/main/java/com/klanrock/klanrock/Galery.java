@@ -1,16 +1,21 @@
 package com.klanrock.klanrock;
 
-public class Album {
+
+public class Galery {
     private String name;
     private int price;
     private int thumbnail;
+    private String btn;
 
-    public Album(String name, int price, int thumbnail) {
+    public Galery(String name, int price, int thumbnail, String btn) {
         this.name = name;
         this.price = price;
         this.thumbnail = thumbnail;
+        this.btn = btn;
     }
-
+    public String getBtn(){
+        return btn;
+    }
     public String getName() {
         return name;
     }
@@ -35,3 +40,4 @@ public class Album {
         this.thumbnail = thumbnail;
     }
 }
+

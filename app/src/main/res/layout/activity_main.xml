@@ -25,7 +25,3 @@
         app:menu="@menu/menu_samping" />
 
 </android.support.v4.widget.DrawerLayout>
-<<<<<<< HEAD
-=======
-
->>>>>>> 5c11de07931b40cf7449c995808fdce2b42a2973

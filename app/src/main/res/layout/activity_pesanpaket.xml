@@ -95,7 +95,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:src="@drawable/ic_plus"
-                        android:layout_marginLeft="80dp"/>
+                        android:layout_marginLeft="60dp"/>
                     <ImageView
                         android:id="@+id/min_alt"
                         android:layout_width="wrap_content"
@@ -202,7 +202,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="5dp"
-                    android:layout_marginLeft="200dp"
+                    android:layout_marginLeft="170dp"
                     android:text="Rp. 300.000"
                     android:textSize="20dp"/>
             </LinearLayout>
@@ -216,14 +216,14 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="5dp"
                     android:layout_marginLeft="5dp"
-                    android:text="Harga"
+                    android:text="Tambahan Biaya"
                     android:textSize="20dp"/>
                 <TextView
                     android:id="@+id/hrgtbh1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="5dp"
-                    android:layout_marginLeft="250dp"
+                    android:layout_marginLeft="150dp"
                     android:text="Rp. 0"
                     android:textSize="20dp"/>
             </LinearLayout>
@@ -253,7 +253,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="5dp"
-                        android:layout_marginLeft="150dp"
+                        android:layout_marginLeft="120dp"
                         android:text="Rp. 300.000"
                         android:textStyle="bold"
                         android:textSize="20dp"/>

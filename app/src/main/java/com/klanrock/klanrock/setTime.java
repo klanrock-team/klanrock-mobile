@@ -51,10 +51,16 @@ public class setTime extends AppCompatActivity {
         timePickerDialog = new TimePickerDialog(this, new TimePickerDialog.OnTimeSetListener() {
             @Override
             public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+                String AM_PM;
+                if (hourOfDay <12 ) {
+                    AM_PM = "AM";
+                } else {
+                    AM_PM = "PM";
+                }
                 /**
                  * Method ini dipanggil saat kita selesai memilih waktu di DatePicker
                  */
-                tvTimeResult.setText(hourOfDay+":"+minute);
+                tvTimeResult.setText(hourOfDay+" : "+minute+ " " + AM_PM);
             }
         },
                 /**

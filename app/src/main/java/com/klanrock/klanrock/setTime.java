@@ -54,7 +54,7 @@ public class setTime extends AppCompatActivity {
                 /**
                  * Method ini dipanggil saat kita selesai memilih waktu di DatePicker
                  */
-                tvTimeResult.setText("Waktu dipilih = "+hourOfDay+":"+minute);
+                tvTimeResult.setText(hourOfDay+":"+minute);
             }
         },
                 /**

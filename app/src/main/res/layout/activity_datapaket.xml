@@ -71,7 +71,7 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/notl"
                     android:padding="10dp"
-                    android:hint="08/09/2018"
+                    android:hint="08-09-2018"
                     android:background="#ffffff"
                     android:textColorHint="#b2bec3"
                     android:inputType="text"
@@ -81,14 +81,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:src="@drawable/ic_calendar_alt"
-                    android:layout_marginLeft="230dp"/>
+                    android:layout_marginLeft="200dp"/>
             </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
                     <EditText
-                        android:id="@+id/waktu"
+                        android:id="@+id/jam"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/tgl"
@@ -103,7 +103,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:src="@drawable/ic_clock"
-                        android:layout_marginLeft="280dp"/>
+                        android:layout_marginLeft="245dp"/>
                 </LinearLayout>
             </LinearLayout>
 

@@ -32,7 +32,7 @@ import java.util.Map;
 public class LoginActivity extends AppCompatActivity {
     private EditText Username,Password;
     private Handler handler = new Handler();
-    private static String URL_LOGIN = "http://192.168.43.7/klanrock/pelanggan/login";
+    private static String URL_LOGIN = ServerUrl.URL+"pelanggan/login";
     private Snackbar snackbar;
     private ProgressDialog pd;
     private ConnectivityManager cekConnection;

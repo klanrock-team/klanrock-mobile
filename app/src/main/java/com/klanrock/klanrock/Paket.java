@@ -2,14 +2,21 @@ package com.klanrock.klanrock;
 public class Paket {
     private String name;
     private int price;
-    private int thumbnail;
+    private String thumbnail;
     private String btn;
+    private String id;
+    private String kategori;
 
-    public Paket(String name, int price, int thumbnail, String btn) {
+    public Paket(String name, int price, String thumbnail, String btn,String id,String kategori) {
         this.name = name;
         this.price = price;
         this.thumbnail = thumbnail;
         this.btn = btn;
+        this.id = id;
+        this.kategori=kategori;
+    }
+    public String getKategori(){
+        return this.kategori;
     }
     public String getBtn(){
         return btn;
@@ -17,24 +24,17 @@ public class Paket {
     public String getName() {
         return name;
     }
-
     public void setName(String name) {
         this.name = name;
     }
-
     public int getPrice() {
         return price;
     }
-
-    public void setPrice(int price) {
-        this.price = price;
+    public String getId(){
+        return this.id;
     }
-
-    public int getThumbnail() {
+    public String getThumbnail() {
         return thumbnail;
     }
 
-    public void setThumbnail(int thumbnail) {
-        this.thumbnail = thumbnail;
-    }
 }

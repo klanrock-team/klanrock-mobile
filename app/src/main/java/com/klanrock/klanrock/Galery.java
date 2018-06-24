@@ -3,15 +3,28 @@ package com.klanrock.klanrock;
 
 public class Galery {
     private String name;
-    private int price;
-    private int thumbnail;
+    private String thumbnail;
     private String btn;
+    private String id;
+    private String jml_foto;
+    private String keterangan;
 
-    public Galery(String name, int price, int thumbnail, String btn) {
+    public Galery(String name,String thumbnail, String btn,String id,String jmt_foto,String keterangan) {
         this.name = name;
-        this.price = price;
         this.thumbnail = thumbnail;
         this.btn = btn;
+        this.id = id;
+        this.jml_foto = jmt_foto;
+        this.keterangan = keterangan;
+    }
+    public String getId(){
+        return this.id;
+    }
+    public String getJml_foto(){
+        return this.jml_foto;
+    }
+    public String getKeterangan(){
+        return this.keterangan;
     }
     public String getBtn(){
         return btn;
@@ -24,19 +37,12 @@ public class Galery {
         this.name = name;
     }
 
-    public int getPrice() {
-        return price;
-    }
 
-    public void setPrice(int price) {
-        this.price = price;
-    }
-
-    public int getThumbnail() {
+    public String getThumbnail() {
         return thumbnail;
     }
 
-    public void setThumbnail(int thumbnail) {
+    public void setThumbnail(String thumbnail) {
         this.thumbnail = thumbnail;
     }
 }

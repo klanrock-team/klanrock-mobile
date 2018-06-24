@@ -2,24 +2,25 @@ package com.klanrock.klanrock;
 
 
 import android.annotation.SuppressLint;
-
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.text.format.DateFormat;
 import android.view.View;
 import android.widget.DatePicker;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.TimePicker;
+
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
 
 
-public class setDateAndTime extends AppCompatActivity {
+public class DetailOrderActivity extends AppCompatActivity {
 
     private TextView tvTimeResult;
     private ImageButton btTimePicker;
@@ -29,13 +30,14 @@ public class setDateAndTime extends AppCompatActivity {
     private TextView tvDateResult;
     private ImageButton btDatePicker;
 
-
+    private Toolbar toolbar;
     @SuppressLint("NewApi")
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_datapaket);
-
+        setContentView(R.layout.activity_detail_order);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
         tvTimeResult = (TextView) findViewById(R.id.jam);
         btTimePicker = (ImageButton) findViewById(R.id.jam_alt);
         btTimePicker.setOnClickListener(new View.OnClickListener() {

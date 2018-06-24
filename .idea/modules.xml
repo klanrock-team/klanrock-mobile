@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Projek.iml" filepath="$PROJECT_DIR$/Projek.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/klanrock-mobile-low-master.iml" filepath="$PROJECT_DIR$/klanrock-mobile-low-master.iml" />
     </modules>
   </component>
 </project>

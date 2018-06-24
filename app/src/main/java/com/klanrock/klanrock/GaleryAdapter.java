@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import com.klanrock.klanrock.Galery;
 
 import com.bumptech.glide.Glide;
 /**
@@ -20,7 +21,7 @@ import java.util.List;
 public class GaleryAdapter extends RecyclerView.Adapter<GaleryAdapter.MyViewHolder> {
 
     private Context mContext;
-    private List<Paket> paketList;
+    private List<Galery> galeryList;
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         public TextView title, count;
@@ -37,33 +38,32 @@ public class GaleryAdapter extends RecyclerView.Adapter<GaleryAdapter.MyViewHold
     }
 
 
-    public GaleryAdapter(Context mContext, List<Paket> paketList) {
+    public GaleryAdapter(Context mContext, List<Galery> galeryList) {
         this.mContext = mContext;
-        this.paketList = paketList;
+        this.galeryList = galeryList;
     }
 
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.list_paket, parent, false);
+                .inflate(R.layout.list_galery, parent, false);
 
         return new MyViewHolder(itemView);
     }
 
     @Override
     public void onBindViewHolder(final MyViewHolder holder, int position) {
-        Paket paket = paketList.get(position);
-        holder.title.setText(paket.getName());
-        holder.count.setText("Rp. " + paket.getPrice());
-        holder.btn_pesan.setText(paket.getBtn());
+        Galery galery = galeryList.get(position);
+        holder.title.setText(galery.getName());
+//        holder.btn_pesan.setText(paket.getBtn());
         // loading paket cover using Glide library
-        Glide.with(mContext).load(paket.getThumbnail()).into(holder.thumbnail);
+        Glide.with(mContext).load(galery.getThumbnail()).into(holder.thumbnail);
 
     }
 
 
     @Override
     public int getItemCount() {
-        return paketList.size();
+        return galeryList.size();
     }
 }

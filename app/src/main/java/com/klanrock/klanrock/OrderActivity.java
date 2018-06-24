@@ -1,5 +1,7 @@
 package com.klanrock.klanrock;
 
+import android.annotation.SuppressLint;
+import android.app.ProgressDialog;
 import android.content.res.Resources;
 import android.graphics.Rect;
 import android.os.Bundle;
@@ -10,11 +12,24 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 
+import com.android.volley.DefaultRetryPolicy;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.bumptech.glide.Glide;
+import com.daimajia.slider.library.SliderTypes.DefaultSliderView;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,6 +40,8 @@ public class OrderActivity extends AppCompatActivity {
     private PaketAdapter adapter;
     private List<Paket> paketList;
     private Toolbar toolbar;
+    private ProgressDialog pd;
+    final String URL = ServerUrl.URL+"paket/get_data";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,14 +49,20 @@ public class OrderActivity extends AppCompatActivity {
         setContentView(R.layout.activity_order);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setDefaultDisplayHomeAsUpEnabled(true);
+        toolbar.setNavigationIcon(android.support.v7.appcompat.R.drawable.abc_ic_ab_back_material);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
 
         initCollapsingToolbar();
 
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
 
         paketList = new ArrayList<>();
-        adapter = new PaketAdapter(this, paketList);
+        adapter = new PaketAdapter(getBaseContext(), paketList);
 
         RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(this, 2);
         recyclerView.setLayoutManager(mLayoutManager);
@@ -47,7 +70,8 @@ public class OrderActivity extends AppCompatActivity {
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(adapter);
 
-        prepareAlbums();
+//        prepareAlbums();
+        request_data();
 
         try {
             Glide.with(this).load(R.drawable.wallpaper).into((ImageView) findViewById(R.id.backdrop));
@@ -89,53 +113,6 @@ public class OrderActivity extends AppCompatActivity {
                 }
             }
         });
-    }
-
-    /**
-     * Adding few albums for testing
-     */
-    private void prepareAlbums() {
-        int[] covers = new int[]{
-                R.drawable.wisuda,
-                R.drawable.couple,
-                R.drawable.maturity,
-                R.drawable.group,
-                R.drawable.preweed,
-                R.drawable.wisuda,
-                R.drawable.weeding
-        };
-
-        Paket a = new Paket("Personal",  500000, covers[0],"Pesan");
-        paketList.add(a);
-
-        a = new Paket("Couple",  200000, covers[1],"Pesan");
-        paketList.add(a);
-
-        a = new Paket("Maturity",  150000, covers[2],"Pesan");
-        paketList.add(a);
-
-        a = new Paket("Group",  155000, covers[3],"Pesan");
-        paketList.add(a);
-
-        a = new Paket("PreWeed",160000, covers[4],"Pesan");
-        paketList.add(a);
-
-        a = new Paket("Wisuda",145000, covers[5],"Pesan");
-        paketList.add(a);
-
-        a = new Paket("Weeding",135000, covers[6],"Pesan");
-        paketList.add(a);
-
-//        a = new Paket("Saya", 120000, covers[7]);
-//        paketList.add(a);
-//
-//        a = new Paket("Sayaka", 170000, covers[8]);
-//        paketList.add(a);
-//
-//        a = new Paket("Hirasa", 190000, covers[9]);
-//        paketList.add(a);
-
-        adapter.notifyDataSetChanged();
     }
 
     /**
@@ -182,5 +159,48 @@ public class OrderActivity extends AppCompatActivity {
     private int dpToPx(int dp) {
         Resources r = getResources();
         return Math.round(TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, r.getDisplayMetrics()));
+    }
+
+    public void request_data(){
+        pd = new ProgressDialog(this);
+        pd.setMessage("Loading...");
+        pd.show();
+        RequestQueue queue = Volley.newRequestQueue(this);
+        StringRequest strReq = new StringRequest(Request.Method.POST, URL,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        pd.hide();
+                        try{
+                            JSONObject jsObj = new JSONObject(response);
+                            JSONArray paket = jsObj.getJSONArray("paket");
+                            for (int i=0;i<paket.length();i++){
+                                JSONObject p = paket.getJSONObject(i);
+                                String name = p.getString("nama_paket");
+                                Log.d("OrderActivity",name);
+                                int harga = p.getInt("harga");
+                                String id = p.getString("id");
+                                String url_gambar = p.getString("gambar");
+                                String kat = p.getString("kategori");
+                                Paket paketku = new Paket(name,harga,url_gambar,"Pesan",id,kat);
+                                paketList.add(paketku);
+                            }
+                            adapter.notifyDataSetChanged();
+                        }catch (Exception e){
+                            e.printStackTrace();
+                        }
+                    }
+                },
+                new Response.ErrorListener(){
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+
+                    }
+
+                }
+        );
+        strReq.setRetryPolicy(new DefaultRetryPolicy(0,DefaultRetryPolicy.DEFAULT_MAX_RETRIES,DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+        queue.add(strReq);
+
     }
 }

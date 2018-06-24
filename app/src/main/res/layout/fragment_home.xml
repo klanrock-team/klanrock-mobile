@@ -7,7 +7,14 @@ xmlns:app="http://schemas.android.com/apk/res-auto"
 tools:context=".HomeFragment"
     android:layout_marginTop="20dp">
 
-
+<!--&lt;!&ndash; TODO: Update blank fragment layout &ndash;&gt;-->
+<!--<TextView-->
+<!--android:id="@+id/des"-->
+<!--android:layout_width="wrap_content"-->
+<!--android:layout_height="wrap_content"-->
+<!--android:layout_gravity="center"-->
+<!--android:text=""-->
+<!--android:textColor="@color/colorAccent"/>-->
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -15,7 +22,7 @@ tools:context=".HomeFragment"
         <com.daimajia.slider.library.SliderLayout
             android:id="@+id/slider"
             android:layout_width="match_parent"
-            android:layout_height="490dp"
+            android:layout_height="510dp"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true" />
 

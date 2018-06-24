@@ -33,7 +33,7 @@ public class RegisterActivity extends AppCompatActivity {
     private Handler handler = new Handler();
     private ProgressDialog pd;
     private ConnectivityManager cekConnection;
-    private static String URL_REGIST = "http://192.168.1.2/klanrock/pelanggan/register";
+    private static String URL_REGIST = ServerUrl.URL+"pelanggan/register";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

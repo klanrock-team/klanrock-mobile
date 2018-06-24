@@ -1,8 +1,5 @@
 package com.klanrock.klanrock;
 
-/**
- * Created by fendrik on 16/05/2018.
- */
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
